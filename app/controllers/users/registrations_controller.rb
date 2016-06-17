@@ -1,16 +1,13 @@
 class Users::RegistrationsController < Devise::RegistrationsController
     
     def create
-        super do |resource|
-            if params[:plan]
-                resource.plan_id=params[:plan]
-                if resource.plan_id==2
-                    resource.save_with_payment
-                else
-                    resource.save
-                end
-            end
-        end
-    end
+        
+        @subscription = Subscription.new(params[:subscription])
+      if @subscription.save_with_payment
+        redirect_to @subscription, :notice => "Thank you for subscribing!"
+        else
+        render :new
+      end
+    end  
 end
-            
+ 
