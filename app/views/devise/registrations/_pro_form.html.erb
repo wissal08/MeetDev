@@ -19,9 +19,7 @@
       <%= f.label :password_confirmation %><br />
       <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control" %>
      </div>
-     <% if @subscription.stripe_card_token.present? %>
-  Credit card has been provided.
-<% else %>
+     
      <div class="form-group">
     <%= label_tag :card_number, "Credit Card Number" %>
     <%= text_field_tag :card_number, nil, name: nil, class: "form-control" %>
@@ -35,7 +33,7 @@
     <%= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month"}%>
     <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year"}%>
   </div>
-  <% end %>
+  
 
      <div class="actions form-group">
       <%= f.submit "Sign up", class: "btn btn-success", id: 'form-submit-btn' %>
