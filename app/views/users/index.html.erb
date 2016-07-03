@@ -1,0 +1,25 @@
+<% @users.each do |user|%>
+ <% if user.profile %>
+ 
+ <li>
+     <div class="well row">
+         <div class="col-sm-4 text-center">
+     <% if user.profile.avatar %>
+     <%= link_to user do %>
+     <%= image_tag user.profile.avatar.url(:thumb) %>
+    <% end %>
+  <% end %>
+  </div>
+  <div>
+     <%= link_to user do %>
+     <h3 class="tu"><%= user.profile.first_name %> <%= user.profile.last_name %></h3>
+     <% end %>
+      <h5><%= user.profile.job_title %></h5>
+     
+  </div>
+  </div>
+  
+  </li>
+  <% end %>
+
+<% end %>
