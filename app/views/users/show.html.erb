@@ -8,7 +8,7 @@
        <div class="well profile-discription"><h3>Description</h3>  <%=@user.profile.description%></div>
        
        <div class="well contactmail">
-       <% if true#current_user.plan_id==2%>
+       <% if current_user.plan_id==2%>
        <h3>Contact Informatons</h3>
         <%= @user.profile.phone_number %></br>
         <%= @user.profile.contact_email %>
