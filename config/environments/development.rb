@@ -14,7 +14,7 @@ Rails.application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
@@ -34,6 +34,16 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
-config.action_mailer.default_url_options = {:host => 'https://secure-sands-36271.herokuapp.com'}
+config.action_mailer.default_url_options = {:host => 'mustsucceedproject-wissal08.c9users.io', port:8080}
 config.action_mailer.delivery_method = :smtp
+# SMTP settings for gmail
+ActionMailer::Base.smtp_settings = {
+ :address              => "smtp.gmail.com",
+ :port                 => 587,
+ :user_name            => "jrad.wissal@gmail.com",
+ :password             => "21233155",
+ :authentication       => "login",
+:enable_startstls_auto => true
+}
+
 end
