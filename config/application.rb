@@ -21,3 +21,12 @@ module MeetDev
     # config.i18n.default_locale = :de
   end
 # SMTP settings for gmail
+ActionMailer::Base.smtp_settings = {
+ :address              => "smtp.gmail.com",
+ :port                 => 587,
+ :user_name            => "jrad.wissal@gmail.com",
+ :password             => "21233155",
+ :authentication       => "login",
+:enable_starttls_auto => true
+}
+end

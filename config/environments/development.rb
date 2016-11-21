@@ -34,6 +34,6 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
-config.action_mailer.default_url_options = { host: 'mustsucceedproject-wissal08.c9users.io', port: 8080 }
+config.action_mailer.default_url_options = { host: 'secure-sands-36271.herokuapp.com', port: 587 }
 config.action_mailer.delivery_method = :smtp
 end
